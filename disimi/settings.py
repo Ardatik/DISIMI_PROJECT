@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q4c1mbabqd@ix1i^i-prrt)wr83^@@9p2-s#_raeblh@t#*&n3'
+SECRET_KEY = 'django-insecure-kcfsrpc-az08=rsq4q1wu&wijonvr5iej87jz7v!c*p%ubv+w7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'neuron.apps.NeuronConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'neuron.apps.NeuronConfig',
 ]
 
 MIDDLEWARE = [
