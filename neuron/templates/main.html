@@ -1,21 +1,65 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
     <meta charset="utf-8" />
     <title>Main</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 30px;
+            margin: 10px 0;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .container a:first-child {
+            margin-top: 0;
+        }
+
+        .container a:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
+
 <body>
-    <div>
-    <a href="http://127.0.0.1:8000/registration/">Registration</a>
+    <div class="container">
+        <a href="registration/">Registration</a>
+        <a href="view_login/">Login</a>
+        <a href="room/">Room</a>
+
+        {% if user != 0 %}
+        <a href="short_description/">Create add</a>
+        {% else %}
+        <a href="/">Create add</a>
+        {% endif %}
     </div>
-    <div>
-    <a href="http://127.0.0.1:8000/short_description/">Create add</a>
-    </div>
-    <div>
-    <a href="http://127.0.0.1:8000/login/">Login</a>
-    </div>
-    <!-- <a href="http://127.0.0.1:8000/generate/create/{{link}}">Link</a> -->
-    
 </body>
+
 </html>
