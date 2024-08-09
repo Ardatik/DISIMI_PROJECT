@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opros</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa;
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,19 +22,22 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-            width: 320px;
+            width: 100%;
+            max-width: 400px; /* Adjusted max-width for better responsiveness */
             text-align: left;
         }
 
+        h3, p {
+            margin-bottom: 15px; /* Adjusted margin for consistency */
+        }
+
         h3 {
-            margin-bottom: 10px;
-            font-size: 16px;
+            font-size: 18px; /* Increased font size for better readability */
             color: #333;
         }
 
         p {
-            margin-bottom: 20px;
-            font-size: 16px;
+            font-size: 18px; /* Increased font size for better readability */
             color: #333;
         }
 
@@ -41,11 +45,11 @@
         input[type="email"],
         input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px; /* Increased padding for easier interaction */
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 16px; /* Increased font size for better readability */
             box-sizing: border-box;
         }
 
@@ -53,8 +57,8 @@
             background-color: #007BFF;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 20px; /* Increased padding for easier interaction */
+            font-size: 18px; /* Increased font size for better readability */
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
@@ -63,6 +67,28 @@
 
         input[type="submit"]:hover {
             background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px; /* Reduced padding for smaller screens */
+            }
+
+            h3, p {
+                font-size: 16px; /* Adjusted font size for smaller screens */
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"] {
+                font-size: 14px; /* Adjusted font size for smaller screens */
+                padding: 10px; /* Adjusted padding for smaller screens */
+            }
+
+            input[type="submit"] {
+                font-size: 16px; /* Adjusted font size for smaller screens */
+                padding: 10px; /* Adjusted padding for smaller screens */
+            }
         }
     </style>
 </head>

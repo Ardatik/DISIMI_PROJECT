@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa;
             margin: 0;
             padding: 0;
             display: flex;
@@ -26,11 +26,19 @@
             border-radius: 5px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block; /* Ensure it respects padding and text size */
         }
 
         a:hover {
             background-color: #0056b3;
             transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            a {
+                padding: 12px 20px; /* Adjust padding for smaller screens */
+                font-size: 16px; /* Adjust font size for smaller screens */
+            }
         }
     </style>
 </head>

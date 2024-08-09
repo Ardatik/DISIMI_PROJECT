@@ -3,62 +3,125 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa; /* Светло-голубой фон */
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative; /* Ensure .header is positioned correctly */
+        }
+
+        .header {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 22px; /* Увеличение размера шрифта в заголовке */
+        }
+
+        .header span {
+            margin-right: 25px;
+            color: #00796b; /* Цвет имени пользователя */
+        }
+
+        .header a {
+            text-decoration: none;
+            color: #00796b; /* Цвет ссылок в заголовке */
+            margin-left: 20px;
+            transition: color 0.3s ease;
+            font-size: 22px; /* Увеличение размера шрифта ссылок */
+        }
+
+        .header a:hover {
+            color: #004d40; /* Цвет ссылок при наведении */
         }
 
         .container {
+            background-color: #ffffff; /* Белый фон контейнера */
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Более выраженная тень */
             text-align: center;
-            background-color: #ffffff;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            margin-top: 120px; /* Space for header */
         }
 
-        a {
+        .main-links {
+            margin-top: 30px;
+        }
+
+        .main-links a {
             text-decoration: none;
-            color: #007BFF;
-            font-size: 30px;
-            margin: 10px 0;
+            color: #004d40; /* Цвет ссылок в основном блоке */
+            font-size: 36px; /* Увеличение размера шрифта */
+            margin: 15px 0;
             display: block;
             transition: color 0.3s ease;
         }
 
-        a:hover {
-            color: #0056b3;
+        .main-links a:hover {
+            color: #00796b; /* Цвет ссылок при наведении */
         }
 
-        .container a:first-child {
-            margin-top: 0;
-        }
+        @media (max-width: 600px) {
+            .header {
+                top: 20px;
+                right: 20px;
+                font-size: 18px;
+            }
 
-        .container a:last-child {
-            margin-bottom: 0;
+            .header span {
+                font-size: 16px;
+                margin-right: 15px;
+            }
+
+            .header a {
+                font-size: 18px;
+                margin-left: 15px;
+            }
+
+            .container {
+                padding: 30px;
+                margin-top: 80px; /* Space for header */
+            }
+
+            .main-links a {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="header">
+        {% if user != 0 %}
+        <span>{{ username }}</span> <!-- Отображение имени пользователя -->
+        <a href="room/">Logout</a>
+        {% else %}
         <a href="registration/">Registration</a>
         <a href="view_login/">Login</a>
-        <a href="room/">Room</a>
-
-        {% if user != 0 %}
-        <a href="short_description/">Create add</a>
-        {% else %}
-        <a href="/">Create add</a>
         {% endif %}
+    </div>
+
+    <div class="container">
+        <div class="main-links">
+            <!-- <a href="room/">Room</a> -->
+
+            {% if user != 0 %}
+            <a href="short_description/">Create add</a>
+            {% else %}
+            <a href="/">Create add</a>
+            {% endif %}
+        </div>
     </div>
 </body>
 

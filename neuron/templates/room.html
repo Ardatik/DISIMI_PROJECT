@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,28 +16,36 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            box-sizing: border-box; /* Для учета отступов в ширине */
         }
 
         h3 {
-            font-size: 24px;
+            font-size: 28px; /* Увеличен для лучшего просмотра */
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
+            width: 100%; /* Устанавливаем ширину списка на 100% */
+            max-width: 600px; /* Максимальная ширина списка */
+            margin: 0 auto; /* Центрируем список */
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* Увеличены отступы между элементами списка */
         }
 
         a {
             text-decoration: none;
             color: #007BFF;
-            font-size: 18px;
+            font-size: 18px; /* Увеличен размер шрифта */
             transition: color 0.3s ease;
+            display: block; /* Чтобы ссылка занимала всю ширину родительского элемента */
+            padding: 10px; /* Добавлены отступы для удобства нажатия */
+            border-radius: 5px; /* Скругленные углы для улучшения визуала */
         }
 
         a:hover {
@@ -46,13 +54,28 @@
 
         .exit-link {
             margin-top: 20px;
-            font-size: 16px;
+            text-align: center; /* Центрируем ссылку выхода */
         }
 
         p {
             margin-top: 40px;
-            font-size: 14px;
+            font-size: 16px; /* Увеличен размер шрифта */
             color: #666;
+            text-align: center; /* Центрируем текст */
+        }
+
+        @media (max-width: 600px) {
+            h3 {
+                font-size: 24px; /* Уменьшаем размер заголовка для маленьких экранов */
+            }
+
+            a {
+                font-size: 16px; /* Уменьшаем размер шрифта ссылок */
+            }
+
+            p {
+                font-size: 14px; /* Уменьшаем размер шрифта для параграфа */
+            }
         }
     </style>
 </head>
@@ -66,10 +89,16 @@
         {% endfor %}
     </ul>
 
+    {% if id_user != 0 %}
     <div class="exit-link">
         <a href="exit/">Exit account</a>
     </div>
-    
+    {% endif %}
+
+    <div class="exit-link">
+        <a href="http://127.0.0.1:8000/">Back!</a>
+    </div>
+
     <p>End!</p>
 </body>
 
