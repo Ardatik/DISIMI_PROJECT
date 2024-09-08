@@ -17,7 +17,7 @@ import json
 
 
 def main(request):
-    try:
+    try:    
         request.COOKIES["id"]
     except KeyError:
         return render(request, 'main.html', context={"user": 0})
